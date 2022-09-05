@@ -8,7 +8,7 @@ import {
   ITEM_PAGE_LOADED,
   ITEM_PAGE_UNLOADED,
 } from "../../constants/actionTypes";
-
+import logo from "../../imgs/placeholder.png";
 const mapStateToProps = (state) => ({
   ...state.item,
   currentUser: state.common.currentUser,
@@ -49,12 +49,18 @@ class Item extends React.Component {
         <div className="text-dark">
           <div className="row bg-white p-4">
             <div className="col-6">
-              <img
+              ///changes
+              {this.props.item.image?<img
                 src={this.props.item.image}
-                alt={this.props.item.title}
+                alt={this.props.item.username}
                 className="item-img"
                 style={{ height: "500px", width: "100%", borderRadius: "6px" }}
-              />
+              />:<img
+                src={logo}
+                alt={this.props.item.username}
+                className="item-img"
+                style={{ height: "500px", width: "100%", borderRadius: "6px" }}
+              />}
             </div>
 
             <div className="col-6">
