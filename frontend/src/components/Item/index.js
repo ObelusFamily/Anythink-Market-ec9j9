@@ -9,7 +9,7 @@ import {
   ITEM_PAGE_UNLOADED,
 } from "../../constants/actionTypes";
 
-import logo from "../../imgs/placeholder.png";
+import placeholder from "../../imgs/placeholder.png"
 
 
 
@@ -54,18 +54,16 @@ class Item extends React.Component {
           <div className="row bg-white p-4">
             <div className="col-6">
 
-              ///changes
-              {this.props.item.image?<img
+              {this.props.item.image ? <img
                 src={this.props.item.image}
                 alt={this.props.item.username}
                 className="item-img"
-                style={{ height: "500px", width: "100%", borderRadius: "6px" }}
-              />:<img
-                src={logo}
-                alt={this.props.item.username}
-                className="item-img"
-                style={{ height: "500px", width: "100%", borderRadius: "6px" }}
-              />}
+                style={{ height: "500px", width: "100%", borderRadius: "6px" }} /> :
+                <img
+                  src={placeholder}
+                  alt={this.props.item.username}
+                  className="item-img"
+                  style={{ height: "500px", width: "100%", borderRadius: "6px" }}/>}
 
               <img
                 src={this.props.item.image}
